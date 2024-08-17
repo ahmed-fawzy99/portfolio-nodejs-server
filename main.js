@@ -38,8 +38,8 @@ app.set("trust proxy", 1);
 
 const sendEmail = async (reqBody, reqIp) => {
     return await transporter.sendMail({
-        from: "ahmaddeghady99@gmail.com",
-        to: "ahmaddeghady99@gmail.com",
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
         subject: `[PORTFOLIO CONTACT FORM]: ${reqBody.subject}`,
         html: `<b>Sender:</b> ${reqBody.email}<br>
                <b>Subject:</b> ${reqBody.subject}<br>
